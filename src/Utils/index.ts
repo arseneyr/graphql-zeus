@@ -1,4 +1,3 @@
-import fetch from 'cross-fetch';
 import { buildClientSchema, getIntrospectionQuery, GraphQLSchema, printSchema } from 'graphql';
 /**
  * Class representing all graphql utils needed in Zeus

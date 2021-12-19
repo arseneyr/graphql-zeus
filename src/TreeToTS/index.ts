@@ -124,7 +124,7 @@ export class TreeToTS {
   }) {
     const operations = bodyTypeScript(env, TreeToTS.resolveOperations(tree));
     return {
-      indexImports: `import { AllTypesProps, ReturnTypes } from './const${esModule ? '.js' : ''}';`,
+      indexImports: `import { AllTypesProps, ReturnTypes } from './const${esModule ? '.js' : '.ts'}';`,
       const: TreeToTS.resolveBasisCode(tree),
       index: TreeToTS.resolveBasisTypes(tree)
         .concat(graphqlErrorTypeScript.concat('\n').concat(constantTypesTypescript).concat('\n\n'))

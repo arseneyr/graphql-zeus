@@ -81,20 +81,16 @@ export class CLI {
       esModule: !!args.esModule,
     });
     Object.keys(typeScriptDefinition).forEach((k) =>
-      writeFileRecursive(
-        path.join(pathToFile, 'zeus'),
-        `${k}.ts`,
-        typeScriptDefinition[k as keyof typeof typeScriptDefinition],
-      ),
+      writeFileRecursive(pathToFile, `${k}.ts`, typeScriptDefinition[k as keyof typeof typeScriptDefinition]),
     );
     if (args.apollo) {
-      writeFileRecursive(path.join(pathToFile, 'zeus'), `apollo.ts`, pluginApollo({ tree }).ts);
+      writeFileRecursive(pathToFile, `apollo.ts`, pluginApollo({ tree }).ts);
     }
     if (args.reactQuery) {
-      writeFileRecursive(path.join(pathToFile, 'zeus'), `reactQuery.ts`, pluginReactQuery({ tree, host }).ts);
+      writeFileRecursive(pathToFile, `reactQuery.ts`, pluginReactQuery({ tree, host }).ts);
     }
     if (args.stuccoSubscriptions) {
-      writeFileRecursive(path.join(pathToFile, 'zeus'), `stuccoSubscriptions.ts`, pluginStucco({ tree }).ts);
+      writeFileRecursive(pathToFile, `stuccoSubscriptions.ts`, pluginStucco({ tree }).ts);
     }
   };
 }
